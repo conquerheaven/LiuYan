@@ -23,10 +23,10 @@
 								</li>';
 							}else {
 								echo '<li>
-									<a href="index.php">登录</a>
+									<a href="http://localhost/LiuYan/index.php">登录</a>
 								</li>
 								<li>
-									<a href="#">注册</a>
+									<a href="http://localhost/LiuYan/admin/Regist.php">注册</a>
 								</li>';
 							}
 							?>
