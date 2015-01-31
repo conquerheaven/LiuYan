@@ -13,8 +13,8 @@
 <?php endif;?>
 <form action="" method="post">
 <div style="text-align:center;">
-<input type="text" name="username" id="username" placeholder="用户名" ><br>
-<input type="password" name="password" id="password" placeholder="密码" ><br>
+<input type="text" name="username" id="username" placeholder="用户名" style="height: 30px"><br>
+<input type="password" name="password" id="password" placeholder="密码" style="height: 30px" ><br>
 <input type="submit" value="登录" class="btn btn-success"><br>
 <input type="hidden" name="action" value="login" />
 </div>

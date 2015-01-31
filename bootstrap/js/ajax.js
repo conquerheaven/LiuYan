@@ -12,7 +12,7 @@
 			xmlobj = new XMLHttpRequest();
 		}
 	}
-	function Reply(id){//获取客户下拉菜单
+	function Reply(id){
 		//alert(id);
 		var content = document.getElementById(id).value;
 		message = "content="+content;
@@ -32,6 +32,25 @@
 			//alert(div);
 			document.getElementById(div).value = "";
 			document.getElementById("re"+div).innerHTML += xmlobj.responseText;
+		}
+	}
+	function deletely(id){
+		message = "id="+id;
+		CreateXMLHttpRequest();
+		xmlobj.onreadystatechange = StarHandlershow;
+		xmlobj.open("GET","admin/deletely.php?"+message,true);
+		xmlobj.send(null);
+	}
+	function deletere(id){
+		message = "id="+id;
+		CreateXMLHttpRequest();
+		xmlobj.onreadystatechange = StarHandlershow;
+		xmlobj.open("GET","admin/deletere.php?"+message,true);
+		xmlobj.send(null);
+	}
+	function StarHandlershow(){
+		if(xmlobj.readyState == 4 && xmlobj.status == 200){
+			document.getElementById("LiuYan").innerHTML = xmlobj.responseText;
 		}
 	}
 	

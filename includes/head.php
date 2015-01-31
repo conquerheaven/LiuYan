@@ -10,7 +10,7 @@
 			<div class="navbar">
 				<div class="navbar-inner">
 					<div class="container-fluid">
-						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="#" class="brand">请留言</a>
+						 <a data-target=".navbar-responsive-collapse" data-toggle="collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></a> <a href="http://localhost/LiuYan/" class="brand">请留言</a>
 						<div class="nav-collapse collapse navbar-responsive-collapse">
 							<ul class="nav pull-right">
 							<?php 
@@ -19,7 +19,10 @@
 									<a>'.$_SESSION['username'].'</a>
 								</li>
 								<li>
-									<a href="index.php?action=logout">退出</a>
+									<a href="http://localhost/LiuYan/index.php?action=logout">退出</a>
+								</li>
+								<li>
+									<a href="http://localhost/LiuYan/admin/Modify.php">修改密码</a>
 								</li>';
 							}else {
 								echo '<li>
@@ -27,7 +30,8 @@
 								</li>
 								<li>
 									<a href="http://localhost/LiuYan/admin/Regist.php">注册</a>
-								</li>';
+								</li>
+							';
 							}
 							?>
 								

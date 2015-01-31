@@ -19,16 +19,26 @@ function getReply($id){
 	$s = $GLOBALS['pdo']->query($sql);
 	$re = '';
 	$num = 1;
+	if(!isset($_SESSION)){ session_start(); }
 	while($row = $s->fetch()){
 		$re .= '<div class="panel-inner" style="border:1px solid">
 				'.getUsername($row['yhid']).':'.$row['content'].' 
-			<div style="text-align:right">
-					【'.$num.'楼】【'.$row['time'].'】
+			<div style="text-align:right">';
+		if($_SESSION['usertype'] == 1) $re .= '<a href="javascript:;" onclick="deletere('.$row['id'].')">删除</a>';
+		$re .= '【'.$num.'楼】【'.$row['time'].'】
 			</div>
 			</div>';
 		$num++;
 	}
 	return $re;
+}
+
+function authority($id){
+	if(!isset($_SESSION)){ session_start(); }
+	if($_SESSION['usertype'] == 1){
+		return '<a href="javascript:;" onclick="deletely('.$id.')">删除</a>';
+	}
+	return '';
 }
 
 try {
@@ -42,7 +52,7 @@ try {
 		echo '<div class="accordion-group" style="border:1px solid">
 		        <div class="accordion-heading">
 						<a class="accordion-toggle collapsed" data-toggle="collapse" href="#accordion-element-'.$row['id'].'"> '.$row['title'].' </a>
-		        		【'.$row['time'].'】【'.getUsername($row['yhid']).'】第'.$row['id'].'条 
+		        		【'.$row['time'].'】【'.getUsername($row['yhid']).'】第'.$row['id'].'条 '.authority($row['id']).'
 		        </div>
 	            <div id="accordion-element-'.$row['id'].'" class="accordion-body collapse">
 	                <div class="accordion-inner"> '.$row['content'].' </div>

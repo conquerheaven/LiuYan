@@ -20,7 +20,7 @@ function userIsLoggedIn(){
 		}
 	}
 	if(isset($_GET['action']) and $_GET['action'] == 'logout'){
-		session_start();
+		if(!isset($_SESSION)){ session_start(); }
 		unset($_SESSION['loggedIn']);
 		unset($_SESSION['username']);
 		unset($_SESSION['password']);
@@ -28,7 +28,7 @@ function userIsLoggedIn(){
 		unset($_SESSION['userid']);
 		return false;
 	}
-	session_start();
+	if(!isset($_SESSION)){ session_start(); }
 	if(isset($_SESSION['loggedIn'])){
 		return databaseContainsUser($_SESSION['username'] , $_SESSION['password']);
 	}

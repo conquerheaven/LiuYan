@@ -61,7 +61,7 @@ include $_SERVER['DOCUMENT_ROOT'].'LiuYan/includes/head.php';
 <table class="form-horizontal">
 				<tr>
     <td class="tdLabel"></td>
-    <td><input type="text" value="" name="title" placeholder="Title"/></td>
+    <td><input type="text" value="" name="title" placeholder="Title" style="height: 30px"/></td>
 </tr>
 
 				<tr>
