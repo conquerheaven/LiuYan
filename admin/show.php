@@ -42,7 +42,7 @@ try {
 		echo '<div class="accordion-group" style="border:1px solid">
 		        <div class="accordion-heading">
 						<a class="accordion-toggle collapsed" data-toggle="collapse" href="#accordion-element-'.$row['id'].'"> '.$row['title'].' </a>
-		        		【'.$row['time'].'】【'.getUsername($row['yhid']).'】
+		        		【'.$row['time'].'】【'.getUsername($row['yhid']).'】第'.$row['id'].'条 
 		        </div>
 	            <div id="accordion-element-'.$row['id'].'" class="accordion-body collapse">
 	                <div class="accordion-inner"> '.$row['content'].' </div>

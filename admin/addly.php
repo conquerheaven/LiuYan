@@ -18,6 +18,7 @@ try {
 	header("refresh:3;url=../index.php");
 	echo '留言成功^_^……三秒后自动跳转';
 } catch (PDOException $e) {
-	$error = $e;
-	include $_SERVER['DOCUMENT_ROOT'].'LiuYan/includes/error.php';
+	header("refresh:3;url=../index.php");
+	echo '留言失败>_<……三秒后自动跳转<br>';
+	echo '数据库错误>_<...'. $e->getMessage();
 }

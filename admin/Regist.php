@@ -27,12 +27,12 @@ include $_SERVER['DOCUMENT_ROOT'].'LiuYan/includes/head.php';
 <?php if(isset($registError)):?>
 <p><?php echo $registError?></p>
 <?php endif;?>
-<form action="admin/adduser.php" method="post">
+<form action="adduser.php" method="post">
 <div style="text-align:center;">
 <input type="text" name="username" id="username" placeholder="用户名" ><br>
 <input type="password" name="password1" id="password1" placeholder="密码" ><br>
 <input type="password" name="password2" id="password2" placeholder="确认密码" ><br>
-<input type="submit" value="登录" class="btn btn-success"><br>
+<input type="submit" value="注册" class="btn btn-success"><br>
 </div>
 </form>
 </div>

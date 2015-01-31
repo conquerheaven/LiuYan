@@ -21,5 +21,5 @@ try {
 			</div>
 			</div>';
 } catch (PDOException $e) {
-	echo '<script type="text/javascript">alert('.$e->getMessage().')</script>';
+	echo $e->getMessage();
 }
